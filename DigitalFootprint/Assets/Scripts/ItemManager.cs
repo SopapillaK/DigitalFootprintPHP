@@ -86,14 +86,14 @@ public class ItemManager : MonoBehaviour
                 itemGo.transform.Find("Image").GetComponent<Image>().sprite = sprite;
             }
 
-            /*
+            
             //Set sell button
-            itemGo.transform.Find("SellButton").GetComponent<Button>().onClick.AddListener(() => {
+            itemGo.transform.Find("BuyButton").GetComponent<Button>().onClick.AddListener(() => {
                 string idInventory = id;
                 string iId = itemId;
                 string userId = Main.Instance.UserInfo.UserID;
-                StartCoroutine(Main.Instance.Web.SellItem(idInventory, itemId, userId));
-            });*/
+                StartCoroutine(Main.Instance.Web.BuyItem(idInventory, itemId, userId));
+            });
             //continue to the next item
 
         }

@@ -155,5 +155,30 @@ public class Web : MonoBehaviour
             }
         }
     }
+
+    public IEnumerator BuyItem(string ID, string itemID, string userID)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("ID", ID);
+        form.AddField("itemID", itemID);
+        form.AddField("userID", userID);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/digitalfootprint/BuyItem.php", form))
+        {
+            yield return www.Send();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log("www.error");
+            }
+            else
+            {
+                //Show results as text
+                Debug.Log(www.downloadHandler.text);
+                //Put here a txt that shows that the item was bought
+
+            }
+        }
+    }
 }
 

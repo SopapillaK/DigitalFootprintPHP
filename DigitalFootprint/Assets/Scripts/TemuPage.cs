@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TemuPage : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public GameObject items1;
+    public GameObject items2;
+    public GameObject temuPage;
+    public bool infoStolen = false;
+
+    public void CardPay()
+    {
+        temuPage.SetActive(false);
+        items1.SetActive(true);
+        items2.SetActive(true);
+
+        infoStolen = true;
+    }
+
+    public void PayPalPay()
+    {
+        temuPage.SetActive(false);
+        items1.SetActive(true);
+        items2.SetActive(true);
+    }
+}

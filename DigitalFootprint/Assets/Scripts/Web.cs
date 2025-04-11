@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class Web : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject itemBoughtIcon;
+    public int itemsBought = 0;
 
     public IEnumerator GetItemIcon(string itemID, System.Action<byte[]> callback)
     {
@@ -176,6 +179,7 @@ public class Web : MonoBehaviour
                 //Show results as text
                 Debug.Log(www.downloadHandler.text);
                 //Put here a txt that shows that the item was bought
+                itemBoughtIcon.SetActive(true);
 
             }
         }

@@ -7,6 +7,8 @@ using SimpleJSON;
 
 public class ItemManager : MonoBehaviour
 {
+    public int itemsBought = 0;
+    public Text itemText;
     Action<string> _createItemsCallback;
     void Start()
     {
@@ -93,6 +95,8 @@ public class ItemManager : MonoBehaviour
                 string iId = itemId;
                 string userId = Main.Instance.UserInfo.UserID;
                 StartCoroutine(Main.Instance.Web.BuyItem(idInventory, itemId, userId));
+                itemsBought++;
+                itemText.text = itemsBought.ToString();
             });
             //continue to the next item
 

@@ -8,7 +8,6 @@ public class Web : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject itemBoughtIcon;
-    public int itemsBought = 0;
 
     public IEnumerator GetItemIcon(string itemID, System.Action<byte[]> callback)
     {

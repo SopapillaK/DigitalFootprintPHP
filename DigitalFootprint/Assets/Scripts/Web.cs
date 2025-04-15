@@ -32,9 +32,12 @@ public class Web : MonoBehaviour
         }
     }
 
-    IEnumerator GetUsers()
+    public IEnumerator GetUsers(string userID, System.Action<string> callback)
     {
-        using (UnityWebRequest www = UnityWebRequest.Get("http://localhost/DigitalFootprint/GetUsers.php"))
+        WWWForm form = new WWWForm();
+        form.AddField("userID", userID);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/DigitalFootprint/GetUsers.php", form))
         {
             yield return www.Send();
 
@@ -49,6 +52,10 @@ public class Web : MonoBehaviour
 
                 //or retrieve results as binary data
                 byte[] results = www.downloadHandler.data;
+
+                string jsonArray = www.downloadHandler.text;
+                //Call callback function to pass results
+                callback(jsonArray);
             }
         }
     }

@@ -10,7 +10,7 @@ public class CardInfoDisplay : MonoBehaviour
     public Text displayCVV;
     public Text displayPostalCode;
 
-    void Start()
+    public void SetDisplayInfo()
     {
         displayCardNum.text = "Card Number: " + CardInfo.cardNumSave;
         displayExpDate.text = "Expiration Date: " + CardInfo.expDateSave;

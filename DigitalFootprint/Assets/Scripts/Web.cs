@@ -34,8 +34,9 @@ public class Web : MonoBehaviour
 
     public IEnumerator GetUsers(string userID, System.Action<string> callback)
     {
+        Debug.Log(userID);
         WWWForm form = new WWWForm();
-        form.AddField("userID", userID);
+        form.AddField("userID", "1");
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/DigitalFootprint/GetUsers.php", form))
         {

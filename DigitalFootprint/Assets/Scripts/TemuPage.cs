@@ -31,6 +31,7 @@ public class TemuPage : MonoBehaviour
 
     public void InstagramPage()
     {
+        //instaPage.GetComponent<CardInfoDisplay>().SetDisplayInfo();
         instaPage.SetActive(true);
         items1.SetActive(false);
         items2.SetActive(false);

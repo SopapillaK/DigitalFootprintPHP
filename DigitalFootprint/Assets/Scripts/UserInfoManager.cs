@@ -20,6 +20,7 @@ public class UserInfoManager : MonoBehaviour
     public void GetInformation()
     {
         string userId = Main.Instance.UserInfo.UserID;
+        //Debug.Log("UserID: " + userId);
         StartCoroutine(Main.Instance.Web.GetUsers(userId, _getInfoCallback));
     }
 
@@ -43,7 +44,7 @@ public class UserInfoManager : MonoBehaviour
                 JSONArray tempArray = JSON.Parse(userInfo) as JSONArray;
                 userInfoJson = tempArray[0].AsObject;
             };
-
+            Debug.Log("UserID: " + userId);
             StartCoroutine(Main.Instance.Web.GetUsers(userId, getUsersInfoCallback));
 
             //Wait until the callback is called from WEB (info finsihed downloading)

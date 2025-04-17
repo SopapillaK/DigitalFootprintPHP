@@ -32,6 +32,29 @@ public class Web : MonoBehaviour
         }
     }
 
+    public IEnumerator GetPostImg(string postID, System.Action<byte[]> callback)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("postID", postID);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/DigitalFootprint/GetPostImg.php", form))
+        {
+            yield return www.Send();
+
+            //Check for errors
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log("www.error");
+            }
+            else
+            {
+                Debug.Log("DOWNLOADING POST: " + postID);
+                byte[] bytes = www.downloadHandler.data;
+                callback(bytes);
+            }
+        }
+    }
+
     public IEnumerator GetUsers(string userID, System.Action<string> callback)
     {
         Debug.Log(userID);
@@ -147,6 +170,31 @@ public class Web : MonoBehaviour
         form.AddField("itemID", itemID);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/DigitalFootprint/GetItem.php", form))
+        {
+            yield return www.Send();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log("www.error");
+            }
+            else
+            {
+                //Show results as text
+                Debug.Log(www.downloadHandler.text);
+                string jsonArray = www.downloadHandler.text;
+
+                //Call callback function to pass results
+                callback(jsonArray);
+            }
+        }
+    }
+
+    public IEnumerator GetPost(string postID, System.Action<string> callback)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("itemID", postID);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/DigitalFootprint/GetPost.php", form))
         {
             yield return www.Send();
 

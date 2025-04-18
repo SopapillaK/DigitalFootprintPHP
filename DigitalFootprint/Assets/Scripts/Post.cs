@@ -5,7 +5,7 @@ using UnityEngine;
 public class Post : MonoBehaviour
 {
     public string ID;    //unique id for each item in our inventory
-    public string ItemID;   //unique id for items in the Item "Catalogu
+    public string PostID;
     void Start()
     {
         

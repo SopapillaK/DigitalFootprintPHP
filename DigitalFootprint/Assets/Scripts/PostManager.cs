@@ -7,7 +7,7 @@ using SimpleJSON;
 
 public class PostManager : MonoBehaviour
 {
-    public Text itemText;
+    //public Text itemText;
     Action<string> _createPostsCallback;
     void Start()
     {
@@ -45,7 +45,7 @@ public class PostManager : MonoBehaviour
                 postInfoJson = tempArray[0].AsObject;
             };
 
-            StartCoroutine(Main.Instance.Web.GetItem(postId, getPostInfoCallback));
+            StartCoroutine(Main.Instance.Web.GetPost(postId, getPostInfoCallback));
 
             //Wait until the callback is called from WEB (info finsihed downloading)
             yield return new WaitUntil(() => isDone == true);
@@ -55,7 +55,7 @@ public class PostManager : MonoBehaviour
             Post post = postGo.AddComponent<Post>();
 
             post.ID = id;
-            post.ItemID = postId;
+            post.PostID = postId;
 
             postGo.transform.SetParent(this.transform);
             postGo.transform.localScale = Vector3.one;
@@ -71,18 +71,18 @@ public class PostManager : MonoBehaviour
             if (bytes.Length == 0)
             {
                 //Create a callback to get the SPRITE from Web.cs
-                Action<byte[]> getItemIconCallback = (downloadbyte) => {
+                Action<byte[]> getPostIconCallback = (downloadbyte) => {
                     Sprite sprite = ImageManager.Instance.BytestoSprite(downloadbyte);
-                    postGo.transform.Find("Image").GetComponent<Image>().sprite = sprite;
+                    postGo.transform.Find("PostImage").GetComponent<Image>().sprite = sprite;
                     ImageManager.Instance.SaveImage(postId, downloadbyte, PostVer);
                     ImageManager.Instance.SaveVersionJSON();
                 };
-                StartCoroutine(Main.Instance.Web.GetItemIcon(postId, getItemIconCallback));
+                StartCoroutine(Main.Instance.Web.GetPostImg(postId, getPostIconCallback));
             }
             else
             {
                 Sprite sprite = ImageManager.Instance.BytestoSprite(bytes);
-                postGo.transform.Find("Image").GetComponent<Image>().sprite = sprite;
+                postGo.transform.Find("PostImage").GetComponent<Image>().sprite = sprite;
             }
             //continue to the next item
 

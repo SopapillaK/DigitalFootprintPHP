@@ -53,7 +53,7 @@ public class ItemManager : MonoBehaviour
 
             //Instantiate Gameobject item prefab
             GameObject itemGo = Instantiate(Resources.Load("Prefabs/Item") as GameObject);
-            Post item = itemGo.AddComponent<Post>();
+            Item item = itemGo.AddComponent<Item>();
 
             item.ID = id;
             item.ItemID = itemId;

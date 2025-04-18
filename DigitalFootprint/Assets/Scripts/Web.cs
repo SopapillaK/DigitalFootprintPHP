@@ -192,7 +192,7 @@ public class Web : MonoBehaviour
     public IEnumerator GetPost(string postID, System.Action<string> callback)
     {
         WWWForm form = new WWWForm();
-        form.AddField("itemID", postID);
+        form.AddField("postID", postID);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/DigitalFootprint/GetPost.php", form))
         {

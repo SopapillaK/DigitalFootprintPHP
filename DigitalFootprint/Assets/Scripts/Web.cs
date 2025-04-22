@@ -193,7 +193,7 @@ public class Web : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("postID", postID);
-
+        Debug.Log("Instagram POST ID: " + postID);
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/DigitalFootprint/GetPost.php", form))
         {
             yield return www.Send();

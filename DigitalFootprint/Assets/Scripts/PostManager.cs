@@ -60,11 +60,11 @@ public class PostManager : MonoBehaviour
             postGo.transform.SetParent(this.transform);
             postGo.transform.localScale = Vector3.one;
             postGo.transform.localPosition = Vector3.zero;
-
+            Debug.Log(postInfoJson);
             //Fill Information
             postGo.transform.Find("Caption").GetComponent<Text>().text = postInfoJson["caption"];
 
-            int PostVer = postInfoJson["PostVer"].AsInt;
+            int PostVer = postInfoJson["postver"].AsInt;
 
             byte[] bytes = ImageManager.Instance.LoadImage(postId, PostVer);
 

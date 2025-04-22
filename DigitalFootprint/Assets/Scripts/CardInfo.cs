@@ -24,10 +24,10 @@ public class CardInfo : MonoBehaviour
 
     void Start()
     {
-        //cardNumSave = cardNumber.text;
-        //expDateSave = expDate.text;
-        //cvvSave = cvv.text;
-        //postalCodeSave = postalCode.text;
+        cardNumSave = null;
+        expDateSave = null;
+        cvvSave = null;
+        postalCodeSave = null;
         
 
         cardNumber.text = PlayerPrefs.GetString("CardNumber", cardNumSave);

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c496139447c40d46ae3cbcda9c82b4a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ccc702a159eedbb41be22036e3c9ee63, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -202,8 +202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.473, y: -0.86423}
-  m_SizeDelta: {x: 224.17, y: 48.8208}
+  m_AnchoredPosition: {x: -7.0309, y: -0.0000038295984}
+  m_SizeDelta: {x: 241.2551, y: 61.8056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3981741764854648895
 CanvasRenderer:
@@ -234,19 +234,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 025b1d616d510474c9c5cc4895e68cc5, type: 3}
-    m_FontSize: 35
+    m_Font: {fileID: 12800000, guid: ed8ec1f60ee11ea40b87e7a2431ba225, type: 3}
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: anesahp
+  m_Text: testuser
 --- !u!1 &8258996912043479530
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,8 +281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 149.24, y: -0.86421}
-  m_SizeDelta: {x: 97.2637, y: 45.202}
+  m_AnchoredPosition: {x: 148.2, y: -0.86423}
+  m_SizeDelta: {x: 126.6503, y: 71.8549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1550216286614557476
 CanvasRenderer:
@@ -313,8 +313,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fad239714096d604b93041d49e12c3b7, type: 3}
-    m_FontSize: 35
+    m_Font: {fileID: 12800000, guid: ce46b89d8b2cf1649b257ea3e8406dee, type: 3}
+    m_FontSize: 33
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10

@@ -22,6 +22,18 @@ public class CardInfo : MonoBehaviour
     public Text displayCVV;
     public Text displayPostalCode;
 
+    public AudioClip postSound;
+    public GameObject stolenInfoPage;
+    public bool isPrivate = false;
+    public bool pic1 = false;
+    public bool pic2 = false;
+    public bool pic3 = false;
+    public GameObject Pic1;
+    public GameObject Pic2;
+    public GameObject Pic3;
+
+    public GameObject instaPage;
+
     void Start()
     {
         cardNumSave = null;
@@ -38,6 +50,57 @@ public class CardInfo : MonoBehaviour
         
     }
 
+    public void PostInstaPic1()
+    {
+        AudioSource ac = GetComponent<AudioSource>();
+        ac.PlayOneShot(postSound);
+
+        pic1 = true;
+        Invoke("Stolen", 2f);
+    }
+
+    public void PostInstaPic2()
+    {
+        AudioSource ac = GetComponent<AudioSource>();
+        ac.PlayOneShot(postSound);
+
+        pic2 = true;
+        Invoke("Stolen", 2f);
+    }
+
+    public void PostInstaPic3()
+    {
+        AudioSource ac = GetComponent<AudioSource>();
+        ac.PlayOneShot(postSound);
+
+        pic3 = true;
+        Invoke("Stolen", 2f);
+    }
+
+    public void Stolen()
+    {
+        instaPage.SetActive(false);
+        stolenInfoPage.SetActive(true);
+
+        if (pic1 == true)
+        {
+            Pic1.SetActive(true);
+        }
+        if (pic2 == true)
+        {
+            Pic2.SetActive(true);
+        }
+        if (pic3 == true)
+        {
+            Pic3.SetActive(true);
+        }
+    }
+
+    public void IsPrivate()
+    {
+        isPrivate = true;
+    }
+
     // Call this to save:
     public void SaveCardInfo()
     {
@@ -52,8 +115,7 @@ public class CardInfo : MonoBehaviour
         displayExpDate.text = "Expiration Date: " + expDate.text;
         displayCVV.text = "CVV: " + cvv.text;
         displayPostalCode.text = "Postal Code: " + postalCode.text;
-
         Debug.Log("Card info saved!");
-        Debug.Log("Card Number: " + cardNumber.text);
+        //Debug.Log("Card Number: " + cardNumber.text);
     }
 }

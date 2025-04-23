@@ -13,6 +13,9 @@ public class TemuPage : MonoBehaviour
     public GameObject paypalPage;
     public bool infoStolen = false;
 
+
+    public GameObject shoppingCart;
+
     public void CardPay()
     {
         temuPage.SetActive(false);
@@ -35,6 +38,8 @@ public class TemuPage : MonoBehaviour
         instaPage.SetActive(true);
         items1.SetActive(false);
         items2.SetActive(false);
+
+        shoppingCart.SetActive(false);
     }
 
     public void ToShopPage()

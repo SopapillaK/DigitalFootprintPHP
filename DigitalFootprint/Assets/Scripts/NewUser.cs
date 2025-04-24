@@ -11,4 +11,10 @@ public class NewUser : MonoBehaviour
         loginScreen.SetActive(false);
         registerScreen.SetActive(true);
     }
+
+    public void BacktoLogin()
+    {
+        registerScreen.SetActive(false);
+        loginScreen.SetActive(true);
+    }
 }
